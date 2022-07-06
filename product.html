@@ -8,6 +8,7 @@
     <title>Ürün Detay</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+      <link href="./myProject.css" rel="stylesheet" />
  
 </head>
 
@@ -97,61 +98,65 @@
     </div>
 
     <div class="container ">
-      <div class="row">
-        <div class="my-2 border-1 border border-light ">
-          <div class="container">
-            <ul class="nav nav-tabs border-dark bg-light nav-fill">
-              <li class="nav-item"><a href="#" class="nav-link">Ürün Açıklaması</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Taksit Seçenekleri</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Yorumlar</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Soru Cevap</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">İade Koşulları</a></li>
+      <div class="row mt-1 row-cols gy-5">
+        <div class="col">
+            <ul class="nav nav-tabs" id="mytab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button type="button" class="nav-link active" id="tabProductDetail" data-bs-toggle="tab" data-bs-target="#productDetail" role="tab" aria-controls="productDetail" aria-selected="true">Ürün Özellikleri
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button type="button" class="nav-link" id="tabComment" data-bs-toggle="tab" data-bs-target="#comment" role="tab" aria-controls="comment" aria-selected="false">Yorumlar</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button type="button" class="nav-link" id="tabPaymentMethods" data-bs-toggle="tab" data-bs-target="#paymentMethods" role="tab" aria-controls="paymentMethods" aria-selected="true">Ödeme & Taksit Seçenekleri</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button type="button" class="nav-link" id="tabQuestionAnswer" data-bs-toggle="tab" data-bs-target="#questionanswer" role="tab" aria-controls="questionanswer" aria-selected="false">Soru Cevap</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button type="button" class="nav-link" id="tabReturnConditions" data-bs-toggle="tab" data-bs-target="#returnConditions" role="tab" aria-controls="returnConditions" aria-selected="true">İade Koşulları</button>
+                </li>
             </ul>
-          </div>
-          <p class="p-5 bg-light">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            mollis nisi enim, at placerat lectus volutpat sit amet. Aliquam erat
-            volutpat. Duis vel urna leo. Vivamus justo dolor, pulvinar nec
-            fringilla ac, faucibus ut est. Duis vel accumsan ligula, quis
-            volutpat sapien. Nunc velit lectus, venenatis eget mauris eu,
-            malesuada viverra neque. Morbi volutpat dolor vel egestas finibus.
-            Proin porttitor quam vitae egestas viverra. Praesent fringilla augue
-            ut sapien convallis, eget malesuada tortor ullamcorper. Vivamus
-            convallis ante a quam ornare consectetur. Vestibulum rutrum vel ante
-            ac sagittis. Curabitur id pellentesque justo. Etiam ut nulla tempor,
-            malesuada purus vel, rhoncus orci. Proin aliquam tincidunt massa, et
-            finibus nisi sagittis quis. Ut a erat sed lectus interdum porta
-            vehicula nec tortor. Curabitur pulvinar est in quam vestibulum
-            viverra. Sed risus tellus, iaculis quis tortor at, placerat placerat
-            risus. Pellentesque condimentum blandit erat at pulvinar. Maecenas
-            in quam et tortor interdum semper. In ullamcorper ultricies turpis
-            eu hendrerit. Fusce imperdiet felis ut velit tincidunt mattis.
-            Mauris interdum, metus nec luctus tristique, velit purus varius
-            velit, sit amet pulvinar purus ante quis nisl. Donec dignissim
-            viverra orci quis tincidunt. Vestibulum quis quam a enim pulvinar
-            ultrices. Vivamus felis diam, auctor eu consequat eu, bibendum vitae
-            nisl. Curabitur viverra mattis suscipit. Sed finibus auctor leo, a
-            cursus mi interdum quis. Cras ultrices aliquet est, at accumsan
-            metus rhoncus mollis. Proin massa leo, feugiat et maximus id,
-            accumsan nec sapien. Pellentesque elementum efficitur urna ac
-            fermentum. Donec et erat cursus, bibendum ligula et, placerat
-            lectus. Morbi a mi ex. Nunc euismod mollis massa ac porta. Nullam a
-            bibendum sem. Suspendisse suscipit risus a molestie accumsan. Donec
-            quis quam mattis, elementum tortor eget, commodo massa. Suspendisse
-            vitae scelerisque sapien. Phasellus sit amet efficitur dui, quis
-            ultricies odio. Pellentesque ultrices nunc erat, ac scelerisque quam
-            scelerisque sed. Suspendisse pretium hendrerit congue. Quisque vel
-            massa et diam varius elementum. Nullam eu nunc fermentum, molestie
-            leo non, iaculis justo. Donec ultrices molestie nunc vel
-            consectetur. Nunc vehicula porta ante dignissim lacinia. In libero
-            mi, rutrum a mi at, efficitur auctor nulla. Mauris id posuere quam.
-            Morbi pretium, erat vitae suscipit aliquet, tortor velit convallis
-            diam, at consequat tellus tellus nec nisi. Cras eget velit in ante
-            tempus pulvinar. Donec semper nisl non velit auctor, ac accumsan
-            libero bibendum.
-          </p>
+            <div class="tab-content mt-4">
+              <div class="tab-pane fade show active" id="productDetail" role="tabpanel" aria-labelledby="paymentMethods">
+                <h5 class="display-9"> Lenovo IdeaPad Intel Celeron N4020 4GB 128GB SSD Freedos 14" HD Taşınabilir Bilgisayar 81VU006STX</h3>
+                <p class="p-1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum perspiciatis aut dolorem, illum saepe minus similique illo sunt commodi hic id laboriosam molestiae! Commodi ab saepe ad quaerat atque non.
+                  In minus commodi suscipit culpa unde blanditiis. Libero labore soluta, ab nemo nostrum eius harum officiis eos quibusdam ipsum. Dolorem ipsa corrupti, recusandae temporibus itaque facilis mollitia assumenda perspiciatis cupiditate.
+                  Porro maiores laborum sed modi minus. Possimus sapiente quod rem veritatis mollitia natus. Dignissimos at quidem ex aperiam perferendis repellat deleniti, voluptatibus expedita maxime vel error nam, accusantium libero ea?
+                  Deserunt possimus suscipit quaerat voluptate explicabo doloremque dolor beatae maxime nostrum obcaecati iste eos, quos, amet totam unde esse odio officiis nihil vero dolore laborum a autem. Nam, eligendi ducimus.
+                  Voluptatem, perferendis. Quis, id quo? Deserunt eveniet distinctio ullam earum, recusandae quam molestias quis laborum? Excepturi aperiam fugiat, eaque quis amet necessitatibus beatae iste cupiditate numquam iure, voluptatum atque rerum.
+                  Illum suscipit nobis tempora quisquam explicabo, excepturi delectus in animi odit fugit dolorum iure unde cum officia ipsum quibusdam est expedita. Aspernatur laudantium dolores vero eaque mollitia quaerat, sint ducimus!
+                  Recusandae earum aspernatur facilis consequuntur consequatur, fuga ex quibusdam quis quia. Eaque eum, modi ab, voluptatum perferendis iure ipsum rerum cumque incidunt ut sequi nisi explicabo voluptate, architecto nesciunt necessitatibus.
+                  Modi pariatur dolorum ut perferendis officia eius tempora assumenda voluptates dicta laborum ipsa nostrum dolore explicabo quia quaerat unde, est quibusdam laboriosam magni nobis praesentium aliquam recusandae commodi. Excepturi, earum!
+                  Ipsam quisquam aut ex quam eaque rem debitis a, alias deleniti enim molestias eius sequi sit vel natus tempore praesentium tenetur dicta fuga inventore voluptate aperiam dolore? Aut, saepe voluptates.
+                  Deserunt repudiandae unde sapiente explicabo, saepe consequuntur tempore quas sequi magni molestiae eius adipisci quisquam autem dolorum eaque ratione maiores harum omnis ut totam laudantium ipsa doloremque necessitatibus debitis! Reprehenderit.
+              </p>
+              </div>
+              <div class="tab-pane fade show " id="comment" role="tabpanel" aria-labelledby="tabComment">
+                <h3 class="display-6">  Ürün Yorumarı </h3>
+                <p>Yorum alanı
+              </p>
+              </div>
+              <div class="tab-pane fade show " id="paymentMethods" role="tabpanel" aria-labelledby="tabPaymentMethods">
+                <h3 class="display-6"> Ödeme & Taksit Seçenekleri</h3>
+                <p>Ödeme tablosu
+              </p>
+              </div>
+              <div class="tab-pane fade show " id="questionanswer" role="tabpanel" aria-labelledby="tabQuestionanswer">
+                <h3 class="display-6"> Soru Cevap</h3>
+                <p>Soru Alanı
+              </p>
+              </div>
+              <div class="tab-pane fade show " id="returnConditions" role="tabpanel" aria-labelledby="tabReturnConditions">
+                <h3 class="display-6"> İade alanı</h3>
+                <p>Ödeme tablosu
+              </p>
+              </div>
         </div>
-      </div>
+
+    </div>
     </div>
     <hr>
   <!-- Footer code-->
