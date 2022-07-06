@@ -74,10 +74,10 @@ body {
   
   .b-example-divider {
     height: 3rem;
-    background-color: rgba(0, 0, 0, .0); 	
-    border: solid rgba(0, 0, 0, .15);
+    background-color:#ffffff; 	
+    border: solid rgba(255, 254, 254, 0.15);
     border-width: 1px 0;
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    box-shadow: inset 0 .5em 1.5em rgba(255, 255, 255, 0.1), inset 0 .125em .5em rgba(255, 255, 255, 0.15);
   }
   
   .b-example-vr {
@@ -168,3 +168,13 @@ body {
     overflow-y: auto;
   }
    /* SideBar Css End */ 
+   .test{
+   width: 415px;
+   height: 415px;
+   text-align: center;
+
+   }
+   .productButton{
+  height: 50px;
+  width: 100%;"
+   }
