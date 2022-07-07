@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Üye kayıt </title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-light p-4">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">My Sites</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Ana Sayfa</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Cihazlar</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link active " aria-current="page" href="#">Hizmetlerimiz</a>
+            </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown">
+              İletişim
+            </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li><a class="dropdown-item" href="#">Müşteri Hizmetleri</a></li>
+                  <li><a class="dropdown-item" href="#">Teknik Servis</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="row justify-content-start">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Ne aramıştınız..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Arayın</button>
+                  </form>
+            </div>
+            <div class="row justify-content-end">
+                <button>Giriş yap</button>
+                <button>Üye ol</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="d-flex justify-content-center "><h1>Üye Kayıt Formu</h1></div>
+    
+      <div class="d-flex justify-content-center ">
+        <div class="row">
+            <div class="col">
+                <form>
+                    <div class="row">
+                        <div class="col-6 mt-1">
+                            <label for="userMail" class="form-label">Adınız</label>
+                            <input type="text" class="form-control" id="userName " aria-describedby="nameHelper"
+                                aria-label="kullanıcı adı">
+                        </div>
+                        <div class="col-6 mt-1">
+                            <label for="userMail" class="form-label">Soyadınız</label>
+                            <input type="text" class="form-control" id="userSurname " aria-describedby="nameHelper"
+                                aria-label="kullanıcı adı">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 mt-1">
+                            <label for="userMail" class="form-label">E-Posta Adresiniz :</label>
+                            <input type="email" class="form-control" id="userMail " aria-describedby="emailHelper"
+                                placeholder="e-posta adresinizi giriniz..." aria-label="e posta adresi giriş alanı">
+
+                        </div>
+                        <div class="col-6 mt-1">
+                            <label for="userPhoto" class="form-label">Profil Fotoğrafı :</label>
+                            <input type="file" class="form-control" id="userPhoto">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 mt-1">
+                            <label for="userPasswordAgain" class="form-label">Şifreniz</label>
+                            <input type="password" class="form-control" id="userPasswordAgain "
+                                aria-describedby="passwordHelper" placeholder="*******">
+                        </div>
+                        <div class="col-6 mt-1">
+                            <label for="userPassword" class="form-label">Şifreniz</label>
+                            <input type="password" class="form-control" id="userPassword "
+                                aria-describedby="passwordHelper" placeholder="*******">
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-6">
+                            <label for="cityId" class="form-label">Şehir Seçiniz</label>
+                            <select class="form-select" id="cityId">
+                                <option selected>Şehir Seçiniz...</option>
+                                <option value="1">Ankara</option>
+                                <option value="2">İstanbul</option>
+                                <option value="3">Kayseri</option>
+                              </select>
+                        </div>
+                        
+                        <div class="col-6">
+                            <label for="cityId" class="form-label">İlçe Seçiniz</label>
+                            <select class="form-select" id="cityId">
+                                <option selected>İlçe Seçiniz...</option>
+                                <option value="1">Ankara</option>
+                                <option value="2">İstanbul</option>
+                                <option value="3">Kayseri</option>
+                              </select>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <label for="adrdess" class="form-label">Açık adres bilgisi</label>
+                        
+                        <div>
+                            <textarea class="form-control" placeholder="cadde sokak daire no:" id="address" style="height: 100px"></textarea>
+                        </div>
+                        
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <hr>
+        <footer class="py-5">
+          <div class="row">
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Sitemiz</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Anasayfa</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ürünlerimiz</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">İletşim</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hakkımızda</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">iletşim</a></li>
+                
+                
+              </ul>
+            </div>
+      
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Sayfalar</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Gizlilik sözleşmesi</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Satış sözleşmesi</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sipariş iptal ve iade</a></li>
+              </ul>
+            </div>
+    
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Markalar</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lenovo</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Monster</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Asus</a></li>
+              </ul>
+            </div>
+            <div class="d-flex col-md-5 offset-md-1 mb-3 justify-content-end">
+              <form>
+                <h5>Mail bültenine abone olun...</h5>
+                <p>İndirmlerden ve yeniliklerden haberdar olmak için abone olun</p>
+                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                  <label for="newsletter1" class="visually-hidden">Mail adresiniz</label>
+                  <input id="newsletter1" type="text" class="form-control" placeholder="Mail adresiniz">
+                  <button class="btn btn-success " style="width: 120px;" type="button">Abone Ol</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p>&copy; Tüm hakları saklıdır</p>
+          </div>
+        </footer>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

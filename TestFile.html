@@ -1,73 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Bootstrap Example</title>
-    <link href="./sidebars.css" rel="stylesheet" />
-  </head>
-  
-  
-  <body>
-    <!-- Example Code -->
-    <div class="container ">
-      <div class="row mt-1 row-cols-1 gy5">
-        <div class="col">
-            <ul class="nav nav-tabs" id="product">
-              <li class="nav-item" role="presentation">
-                <button type="button" class="nav-link active" id="productDetailid" data-bs-toogle="tab"
-                  data-bs-atrget="#productDetail" role="tab" aria-controls="productdetaila" aria-selected="true">Ürün Detayı
-                </button>
-              </li>
-              <li class="nav-item" role="presentation">
-                  <button type="button" class="nav-link " id="paymentOptionsid" data-bs-toogle="tab"
-                    data-bs-atrget="#paymentOptions" role="tab" aria-controls="paymentOptionsa" aria-selected="false">Ödeme & Taksit Seçenekleri
-                  </button>
-              </li>
-              
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Bootstrap Example</title>
+</head>
+
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-light p-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">My Sites</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Ana Sayfa</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Cihazlar</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link active " aria-current="page" href="#">Hizmetlerimiz</a>
+        </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link active dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown">
+          İletişim
+        </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="#">Müşteri Hizmetleri</a></li>
+              <li><a class="dropdown-item" href="#">Teknik Servis</a></li>
             </ul>
-            <!-- <div class="tab-content mt-4">
-              <div class="tab-pane fade show active" id="productDetail" role="tabpanel" aria-labelledby="productDetailid">
-                <h3 class="display-6"> Ürün içeriği</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nulla omnis cupiditate repudiandae iusto autem assumenda temporibus magnam et, a eligendi maiores possimus esse eius id, nisi, quia error consequuntur.
-                Inventore odit, at cum recusandae reprehenderit deserunt quas deleniti velit sequi assumenda, quia exercitationem fugit in molestias! Assumenda perspiciatis officia consequatur maxime itaque quidem nulla quo provident sit! Modi, soluta!
-                Nemo veritatis iusto mollitia neque aliquam sequi exercitationem aliquid et saepe illo. Illo perspiciatis quia, molestias, obcaecati expedita saepe ab optio libero, voluptate minima veritatis? Maxime, exercitationem totam! Ab, dolorum.
-              </p>
-              </div>
-              <div class="tab-pane fade" id="paymentOptions" role="tabpanel" aria-labelledby="paymentOptionsid">
-                <h3 class="display-6"> Ödeme Seçenekleri</h3>
-                <p> Taksit</p>
-              </div>
-            </div> -->
-            
-        </div>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Ne aramıştınız..." aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Arayın</button>
+        </form>
       </div>
     </div>
+  </nav>
 
 
 
-    <!-- End Example Code -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
-<!-- <li class="nav-item" role="presentation">
-  <button type="button" class="nav-link " id="comment" data-bs-toogle="tab"
-    data-bs-atrget="#comment" role="tab" aria-controls="comment" aria-selected="false">Yorumlar & Değerlendirmeler
-  </button>
-</li>
-<li class="nav-item" role="presentation">
-    <button type="button" class="nav-link " id="questions " data-bs-toogle="tab"
-      data-bs-atrget="#questions " role="tab" aria-controls="questions " aria-selected="false">Soru Cevap
-    </button>
-</li>
-<li class="nav-item" role="presentation">
-<button type="button" class="nav-link " id="questions " data-bs-toogle="tab"
-  data-bs-atrget="#questions " role="tab" aria-controls="questions " aria-selected="false">Soru Cevap
-</button>
-</li>
-<li class="nav-item" role="presentation">
-<button type="button" class="nav-link " id="returnConditions " data-bs-toogle="tab"
-data-bs-atrget="#returnConditions " role="tab" aria-controls="returnConditions " aria-selected="false">İade Koşulları
-</button>
-</li> -->
