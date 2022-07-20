@@ -94,7 +94,7 @@
       </div>
       <hr>
       <div class="container">
-        <span class="fs-1">5.000 </span><span class="fs-4">TL</span>
+        <span class="fs-1" id="price">4500.00 </span><span class="fs-4">TL</span>
         <div>
           <a href="#" class="stretched-link text-dark">Taksit Seçeneklerini inceleyebilirisiniz...</a>
         </div>
@@ -131,15 +131,7 @@
               <h5 class="display-9"> Lenovo IdeaPad Intel Celeron N4020 4GB 128GB SSD Freedos 14" HD Taşınabilir Bilgisayar 81VU006STX</h3>
               <p class="p-1">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum perspiciatis aut dolorem, illum saepe minus similique illo sunt commodi hic id laboriosam molestiae! Commodi ab saepe ad quaerat atque non.
-                In minus commodi suscipit culpa unde blanditiis. Libero labore soluta, ab nemo nostrum eius harum officiis eos quibusdam ipsum. Dolorem ipsa corrupti, recusandae temporibus itaque facilis mollitia assumenda perspiciatis cupiditate.
-                Porro maiores laborum sed modi minus. Possimus sapiente quod rem veritatis mollitia natus. Dignissimos at quidem ex aperiam perferendis repellat deleniti, voluptatibus expedita maxime vel error nam, accusantium libero ea?
-                Deserunt possimus suscipit quaerat voluptate explicabo doloremque dolor beatae maxime nostrum obcaecati iste eos, quos, amet totam unde esse odio officiis nihil vero dolore laborum a autem. Nam, eligendi ducimus.
-                Voluptatem, perferendis. Quis, id quo? Deserunt eveniet distinctio ullam earum, recusandae quam molestias quis laborum? Excepturi aperiam fugiat, eaque quis amet necessitatibus beatae iste cupiditate numquam iure, voluptatum atque rerum.
-                Illum suscipit nobis tempora quisquam explicabo, excepturi delectus in animi odit fugit dolorum iure unde cum officia ipsum quibusdam est expedita. Aspernatur laudantium dolores vero eaque mollitia quaerat, sint ducimus!
-                Recusandae earum aspernatur facilis consequuntur consequatur, fuga ex quibusdam quis quia. Eaque eum, modi ab, voluptatum perferendis iure ipsum rerum cumque incidunt ut sequi nisi explicabo voluptate, architecto nesciunt necessitatibus.
-                Modi pariatur dolorum ut perferendis officia eius tempora assumenda voluptates dicta laborum ipsa nostrum dolore explicabo quia quaerat unde, est quibusdam laboriosam magni nobis praesentium aliquam recusandae commodi. Excepturi, earum!
-                Ipsam quisquam aut ex quam eaque rem debitis a, alias deleniti enim molestias eius sequi sit vel natus tempore praesentium tenetur dicta fuga inventore voluptate aperiam dolore? Aut, saepe voluptates.
-                Deserunt repudiandae unde sapiente explicabo, saepe consequuntur tempore quas sequi magni molestiae eius adipisci quisquam autem dolorum eaque ratione maiores harum omnis ut totam laudantium ipsa doloremque necessitatibus debitis! Reprehenderit.
+                
             </p>
             </div>
             <div class="tab-pane fade show " id="comment" role="tabpanel" aria-labelledby="tabComment">
@@ -149,8 +141,11 @@
             </div>
             
             <div class="tab-pane fade show " id="paymentMethods" role="tabpanel" aria-labelledby="tabPaymentMethods">
-              <div class=" border-1 border border-light" style="height:auto; width: 320px;">
-                  <table class="table table-striped table-hover">
+              <div style="height: 40px; width: 320px;">
+                <p class="text-center">A Bankası</p>
+              </div>
+                <div class=" border-1 border border-light" style="height:auto; width: 320px;">
+                  <table class="table table-striped table-hover" id="installmentTable">
                     <thead>
                       <tr>
                         <th>Taksit</th>
@@ -159,49 +154,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>2</td>
-                        <td id="taksit"> -</td>
-                        <td id="fiyat"> -</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>666,33 TL</td>
-                        <td>1.999,00 TL</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td> -</td>
-                        <td> -</td>
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td> -</td>
-                        <td> -</td>
-                      </tr>
-                      <tr>
-                        <td>6</td>
-                        <td>352,22 TL</td>
-                        <td>2.113,34 TL</td>
-                      </tr>
-                      <tr>
-                        <td>7</td>
-                        <td> -</td>
-                        <td> -</td>
-                      </tr>
-                      <tr>
-                        <td>8</td>
-                        <td> -</td>
-                        <td> -</td>
-                      </tr>
-                      <tr>
-                        <td>9</td>
-                        <td>241,95 TL</td>
-                        <td>2.177,51 TL</td>
-                      </tr>
+                      
                     </tbody>
                   </table>
-              </div>
+                </div>
             </div>
             <div class="tab-pane fade show " id="questionanswer" role="tabpanel" aria-labelledby="tabQuestionanswer">
               <h3 class="display-6"> Soru Cevap</h3>
@@ -255,7 +211,7 @@
       <div class="d-flex col-md-5 offset-md-1 mb-3 justify-content-end">
         <form>
           <h5>Mail bültenine abone olun...</h5>
-          <p>İndirmlerden ve yeniliklerden haberdar olmak için abone olun</p>
+          <p>İndirimlerden ve yeniliklerden haberdar olmak için abone olun</p>
           <div class="d-flex flex-column flex-sm-row w-100 gap-2">
             <label for="newsletter1" class="visually-hidden">Mail adresiniz</label>
             <input id="newsletter1" type="text" class="form-control" placeholder="Mail adresiniz">
@@ -272,7 +228,8 @@
 </div>
 <!-- Footer code-->
 <script>  document.getElementById("tabPaymentMethods").onclick = function() {ornek()};</script>
+</body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+
 </html>
