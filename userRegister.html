@@ -21,45 +21,54 @@
                 <form>
                     <div class="row">
                         <div class="col-6 mt-1">
-                            <label for="userMail" class="form-label">Adınız</label>
+                            <label class="my-1" for="userMail" class="form-label">Adınız</label>
                             <input type="text" class="form-control" id="userName " aria-describedby="nameHelper"
                                 aria-label="kullanıcı adı">
                         </div>
                         <div class="col-6 mt-1">
-                            <label for="userMail" class="form-label">Soyadınız</label>
+                            <label class="my-1" for="userMail" class="form-label">Soyadınız</label>
                             <input type="text" class="form-control" id="userSurname " aria-describedby="nameHelper"
                                 aria-label="kullanıcı adı">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-6 mt-1">
-                            <label for="userMail" class="form-label">E-Posta Adresiniz :</label>
+                            <label class="my-1" for="userMail" class="form-label">E-Posta Adresiniz :</label>
                             <input type="email" class="form-control" id="userMail " aria-describedby="emailHelper"
                                 placeholder="e-posta adresinizi giriniz..." aria-label="e posta adresi giriş alanı">
 
                         </div>
                         <div class="col-6 mt-1">
-                            <label for="userPhoto" class="form-label">Profil Fotoğrafı :</label>
+                            <label class="my-1" for="userPhoto" class="form-label">Profil Fotoğrafı :</label>
                             <input type="file" class="form-control" id="userPhoto">
 
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6 mt-1">
-                            <label for="userPasswordAgain" class="form-label">Şifreniz</label>
-                            <input type="password" class="form-control" id="userPasswordAgain "
-                                aria-describedby="passwordHelper" placeholder="*******">
+                        <div class="col-6">
+                                <label class="my-1" for="userPassword" class="form-label">Şifreniz</label>
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control" id="userPassword" placeholder="******" />
+                                <div class="input-group-text">
+                                  <input class="form-check-input mt-0" type="checkbox" onclick="passwordShow()" />
+                                </div>
+                              </div>
                         </div>
-                        <div class="col-6 mt-1">
-                            <label for="userPassword" class="form-label">Şifreniz</label>
-                            <input type="password" class="form-control" id="userPassword "
-                                aria-describedby="passwordHelper" placeholder="*******">
+                        <div class="col-6">
+                            <label class="my-1" for="userPasswordAgain" class="form-label">Şifre Tekrar</label>
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control" id="userPasswordAgain" placeholder="******" />
+                                <div class="input-group-text">
+                                  <input class="form-check-input mt-0" type="checkbox" onclick="passwordShow()" />
+                                </div>
+                              </div>
                         </div>
+                        
                     </div>
                     <div class="row">
                         
                         <div class="col-6">
-                            <label for="cityId" class="form-label">Şehir Seçiniz</label>
+                            <label class="my-1" for="cityId" class="form-label">Şehir Seçiniz</label>
                             <select class="form-select" id="cityId">
                                 <option selected>Şehir Seçiniz...</option>
                                 <option value="1">Ankara</option>
@@ -69,7 +78,7 @@
                         </div>
                         
                         <div class="col-6">
-                            <label for="cityId" class="form-label">İlçe Seçiniz</label>
+                            <label class="my-1" for="cityId" class="form-label">İlçe Seçiniz</label>
                             <select class="form-select" id="cityId">
                                 <option selected>İlçe Seçiniz...</option>
                                 <option value="1">Ankara</option>
@@ -77,15 +86,30 @@
                                 <option value="3">Kayseri</option>
                               </select>
                         </div>
-                      </div>
-                      <div class="row">
+                    </div>
+                    <div class="row">
                         <label for="adrdess" class="form-label">Açık adres bilgisi</label>
                         
                         <div>
                             <textarea class="form-control" placeholder="cadde sokak daire no:" id="address" style="height: 100px"></textarea>
                         </div>
                         
-                      </div>
+                    </div>
+                    <div class="row">
+                        <label class="my-1" for="correct"> Lütfen karakterleri doğrulayın</label>
+                        <div class="col-6 mt-2"> <span class="form-control">A Q I J</span>
+                        </div>
+                        <div class="col-6 mt-2">
+                            <input type="text" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="d-grid gap-1 my-3">
+                        <button id="register"  class="btn btn-outline-success">
+                          Kayıt Ol
+                        </button>
+          
+                    </div>
+                    
                 </form>
             </div>
         </div>
@@ -95,6 +119,16 @@
   <my-footer></my-footer>
   <!-- Footer code-->
       </div>
+<script>
+    function passwordShow() {
+        var x = document.getElementById("userPassword");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+</script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
