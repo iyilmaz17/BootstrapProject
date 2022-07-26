@@ -34,7 +34,58 @@ function ornek() {
 // Navbar Code
 class MyHeader extends HTMLElement {
   connectedCallback() {
-      this.innerHTML = '<nav class="navbar navbar-expand-lg bg-light p-4"><div class="container-fluid"><a class="navbar-brand" href="./index.html">My Sites</a><button class="navbar-toggler"type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Togglenavigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarScroll"><ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;"><li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ana Sayfa</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Cihazlar</a></li><li class="nav-item"><a class="nav-link active " aria-current="page" href="#"> Yeni Hizmetlerimiz</a></li><li class="nav-item dropdown"><a class="nav-link active dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown">İletişim</a><ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown"><li><a class="dropdown-item" href="#">Müşteri Hizmetleri</a></li><li><a class="dropdown-item" href="#">Teknik Servis</a></li></ul></li></ul><form class="d-flex" role="search"><input class="form-control me-2" type="search" placeholder="Ne aramıştınız..." aria-label="Search"><button class="btn btn-outline-success" type="submit">Arayın</button><div class="col-6 d-flex justify-content-end align-items-center"><div class="btn-group" role="group" aria-label="Basic example"><a class="btn btn-outline-success" href="./signIn.html">Giriş Yap</a><a class="btn btn-outline-success" href="./userRegister.html">Kayıt Ol</a></div></div></form></div></div></nav>'
+      this.innerHTML = ' <nav class="navbar navbar-expand-lg bg-light p-4">\
+      <div class="container-fluid"><a class="navbar-brand" href="./index.html"> My Sites</a><button class="navbar-toggler"\
+              type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll"\
+              aria-expanded="false" aria-label="Togglenavigation"><span class="navbar-toggler-icon"></span></button>\
+          <div class="collapse navbar-collapse" id="navbarScroll">\
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">\
+                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ana Sayfa</a></li>\
+                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Cihazlar</a></li>\
+                  <li class="nav-item"><a class="nav-link active " aria-current="page" href="#">Yeni Hizmetlerimiz</a>\
+                  </li>\
+                  <li class="nav-item dropdown"><a class="nav-link active dropdown-toggle" href="#"\
+                          id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown">İletişim</a>\
+                      <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">\
+                          <li><a class="dropdown-item" href="#">Müşteri Hizmetleri</a></li>\
+                          <li><a class="dropdown-item" href="#">Teknik Servis</a></li>\
+                      </ul>\
+                  </li>\
+              </ul>\
+              <form class="d-flex" role="search"><input class="form-control me-2" type="search"\
+                      placeholder="Ne aramıştınız..." aria-label="Search"><button class="btn btn-outline-success"\
+                      type="submit">Arayın</button>\
+                  <div class="col-6 d-flex justify-content-end align-items-center">\
+                      <div class="btn-group" role="group" aria-label="Basic example"><button type="button"\
+                              class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#signinModal">Giriş\
+                              Yap</button><a class="btn btn-outline-success" href="./userRegister.html">Kayıt Ol</a></div>\
+                  </div>\
+              </form>\
+          </div>\
+      </div>\
+  </nav>\
+  <div class="modal fade" tabindex="-1" id="signinModal">\
+      <div class="modal-dialog modal-dialog-centered" aria-hidden="true" data-bs-backdrop="static">\
+          <div class="modal-content">\
+              <div class="modal-header">\
+                  <h2 class="fw-bold mb-0">Giriş Yap</h2><button type="button" class="btn-close" data-bs-dismiss="modal"\
+                      aria-label="Kapat"></button>\
+              </div>\
+              <div class="modal-body">\
+                  <form class="">\
+                      <div class="form-floating mb-3"><input type="email" class="form-control rounded-3"\
+                              id="floatingInput" placeholder="name@example.com"><label for="floatingInput">Mail\
+                              Adresi</label></div>\
+                      <div class="form-floating mb-3"><input type="password" class="form-control rounded-3"\
+                              id="floatingPassword" placeholder="Password"><label for="floatingPassword">Şifre</label>\
+                      </div><button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Giriş</button><a\
+                          href="#">Şifremi Unuttum</a>\
+                  </form>\
+              </div>\
+              <div class="modal-footer"></div>\
+          </div>\
+      </div>\
+  </div>'
   }
 }
 customElements.define("my-header",MyHeader)
@@ -49,4 +100,30 @@ class MyFooter extends HTMLElement{
 
 customElements.define("my-footer",MyFooter)
 
+// Password Validation
+
+window.onload = function () {
+  document.getElementById("userPassword").onchange = validatePassword;
+  document.getElementById("userPasswordAgain").onchange = validatePassword;
+}
+
+function validatePassword() {
+  var password2 = document.getElementById("userPasswordAgain").value;
+  var password1 = document.getElementById("userPassword").value;
+  if (password1 != password2)
+      document.getElementById("userPasswordAgain").setCustomValidity("Şifreler eşleşmiyor");
+  else
+      document.getElementById("userPasswordAgain").setCustomValidity('');
+}
+
+// Password Show   // Tek şifre alanı için çalışıyor iki alan olarak düzeltilmeli
+
+function passwordShow() {
+  var x = document.getElementById("userPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 
