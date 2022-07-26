@@ -127,3 +127,18 @@ function passwordShow() {
   }
 }
 
+// Page Top Button  // Sayfa yüklenince aktif gözüküyor.
+
+$(function(){
+  $(window).scroll(function(){
+    if($(window).scrollTop()>100){
+      $("#pageTop").fadeIn();
+    }
+    else{
+      $("#pageTop").fadeOut();
+    }
+  })
+  $("#pageTop").click(function(){
+    $("body,html").animate({screenTop:0},1500)
+  })
+ })
