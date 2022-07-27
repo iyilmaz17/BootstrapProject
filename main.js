@@ -1,3 +1,4 @@
+
 // installmentTable Code
 
 function ornek() {
@@ -34,7 +35,7 @@ function ornek() {
 // Navbar Code
 class MyHeader extends HTMLElement {
   connectedCallback() {
-      this.innerHTML = ' <nav class="navbar navbar-expand-lg bg-light p-4">\
+    this.innerHTML = ' <nav class="navbar navbar-expand-lg bg-light p-4">\
       <div class="container-fluid"><a class="navbar-brand" href="./index.html"> My Sites</a><button class="navbar-toggler"\
               type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll"\
               aria-expanded="false" aria-label="Togglenavigation"><span class="navbar-toggler-icon"></span></button>\
@@ -88,33 +89,19 @@ class MyHeader extends HTMLElement {
   </div>'
   }
 }
-customElements.define("my-header",MyHeader)
+customElements.define("my-header", MyHeader)
 
 // Footer Code
 
-class MyFooter extends HTMLElement{
-  connectedCallback(){
+class MyFooter extends HTMLElement {
+  connectedCallback() {
     this.innerHTML = '<div class="container"><hr><footer class="py-5"><div class="row"><div class="col-6 col-md-2 mb-3"><h5>Sitemiz</h5><ul class="nav flex-column"><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Anasayfa</a></li><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ürünlerimiz</a></li><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">İletşim</a></li><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hakkımızda</a></li><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">iletşim</a></li></ul></div><div class="col-6 col-md-2 mb-3"><h5>Sayfalar</h5><ul class="nav flex-column"><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Gizlilik sözleşmesi</a></li><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Satış sözleşmesi</a></li><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sipariş iptal ve iade</a></li></ul></div><div class="col-6 col-md-2 mb-3"><h5>Markalar</h5><ul class="nav flex-column"><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lenovo</a></li><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Monster</a></li><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Asus</a></li></ul></div><div class="d-flex col-md-5 offset-md-1 mb-3 justify-content-end"><form><h5>Mail bültenine abone olun...</h5><p>İndirmlerden ve yeniliklerden haberdar olmak için abone olun</p><div class="d-flex flex-column flex-sm-row w-100 gap-2"><label for="newsletter1" class="visually-hidden">Mail adresiniz</label><input id="newsletter1" type="text" class="form-control" placeholder="Mail adresiniz"><button class="btn btn-success " style="width: 120px;" type="button">Abone Ol</button></div></form></div></div><div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"><p>&copy; Tüm hakları saklıdır</p></div></footer></div>'
   }
 }
 
-customElements.define("my-footer",MyFooter)
+customElements.define("my-footer", MyFooter)
 
-// Password Validation
 
-window.onload = function () {
-  document.getElementById("userPassword").onchange = validatePassword;
-  document.getElementById("userPasswordAgain").onchange = validatePassword;
-}
-
-function validatePassword() {
-  var password2 = document.getElementById("userPasswordAgain").value;
-  var password1 = document.getElementById("userPassword").value;
-  if (password1 != password2)
-      document.getElementById("userPasswordAgain").setCustomValidity("Şifreler eşleşmiyor");
-  else
-      document.getElementById("userPasswordAgain").setCustomValidity('');
-}
 
 // Password Show   // Tek şifre alanı için çalışıyor iki alan olarak düzeltilmeli
 
@@ -129,16 +116,119 @@ function passwordShow() {
 
 // Page Top Button  // Sayfa yüklenince aktif gözüküyor.
 
-$(function(){
-  $(window).scroll(function(){
-    if($(window).scrollTop()>100){
+$(function () {
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 100) {
       $("#pageTop").fadeIn();
     }
-    else{
+    else {
       $("#pageTop").fadeOut();
     }
   })
-  $("#pageTop").click(function(){
-    $("body,html").animate({screenTop:0},1500)
+  $("#pageTop").click(function () {
+    $("body,html").animate({ screenTop: 0 }, 1500)
   })
- })
+})
+
+ // Register Form Validation Rules
+
+
+    $(function(){
+      $("#register").click(function () {
+        var name;
+        var email;
+        var password;
+        var passwordAgain;
+  
+        name = $("#userName").val();
+        name = jQuery.trim(email);
+  
+        email = $("#userMail").val();
+        email = jQuery.trim(email);
+  
+        password = $("#userPassword").val();
+        password = password.trim(password);
+  
+        passwordAgain = $("#userPasswordAgain").val();
+        password = password.trim(password);
+        
+        
+        // Name validator
+      
+        if (name == "") {
+          $("#validateName").html("İsim alanı boş geçilemez")
+        }
+        else if (name.length() <= 3 && name.length() >= 15) {
+          $("#validateName").html("İsim değeri 3-15 karakter arasında olmalı")
+        }
+  
+        // Surname validator
+        if (name == "") {
+          $("#validateSurname").html("Soyadı alanı boş geçilemez")
+        }
+        else if (name.length() <= 3 && name.length() >= 15) {
+          $("#validateSurname").html("Soyadı değeri 3-15 karakter arasında olmalı")
+        }
+        
+  
+        // Email validator
+        if (email == "") {
+          $("#validationEmail").html("Email boş geçilemez")
+        } else if (validateEmail(email) == false) {
+          $("#validationEmail").html("Email'i uygun formatte giriniz");
+        }
+  
+        // Password validator
+        if (password == "") {
+          $("#validationPassword").html("Şifre boş geçilemez")
+        }
+        // else if(password == passwordAgain){
+        //   $("#validationPassword").html("Şifreler eşleşmiyor")
+        //   $("#validationPasswordAgain").html("Şifreler eşleşmiyor")
+        // }
+        
+  
+        /*validation Email regex */
+        function validateEmail(email) {
+          var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return regex.test(email);
+        }
+  
+      });
+    })
+
+    // Register Form Button Disabled
+
+    $(function(){
+      $(".filed input").on("keyup",function(){
+        let empty = false;
+        $(".filed input").each(function(){
+          empty = $(this).val().length == 0;
+        });
+        if(empty)
+        {
+          $(".actions input").attr("disabled","disabled");
+        }
+        else{
+          $(".actions input").attr("disabled",false);
+        }
+      });
+    });
+
+
+
+// // Password Validation
+
+// window.onload = function () {
+//   document.getElementById("userPassword").onchange = validatePassword;
+//   document.getElementById("userPasswordAgain").onchange = validatePassword;
+// }
+
+// function validatePassword() {
+//   var password2 = document.getElementById("userPasswordAgain").value;
+//   var password1 = document.getElementById("userPassword").value;
+//   if (password1 != password2)
+//     document.getElementById("userPasswordAgain").setCustomValidity("Şifreler eşleşmiyor");
+//   else
+//     document.getElementById("userPasswordAgain").setCustomValidity('');
+// }
