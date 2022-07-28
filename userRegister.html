@@ -21,47 +21,59 @@
   <div class="d-flex justify-content-center">
     <div class="row">
       <div class="col">
-        <form>
+        <form class="needs-validation" novalidate="" action="" id="userRegisterForm">
           <div class= "row">
             <div class="filed col-6 mt-1">
-              <label class="my-1" for="userName" class="form-label">Adınız</label>
-              <input type="text" class="form-control" id="userName " aria-describedby="nameHelper" aria-label="isim" />
-              <span id="validateName" class="text-danger"></span>
+              <label class="my-1" for="userName" class="form-label ">Adınız :</label>
+              <input maxlength="15" minlength="3" type="text" class="form-control" id="userName " aria-describedby="nameHelper" aria-label="isim"autofocus  required/>
+              <span class="invalid-feedback"> Lütfen uygun formatta giriş yapınız.</span>
             </div>
             <div class="filed col-6 mt-1">
-              <label class="my-1" for="userSurname" class="form-label">Soyadınız</label>
-              <input type="text" class="form-control" id="userSurname " aria-describedby="nameHelper"
+              <label class="my-1" for="userSurname" class="form-label">Soyadınız :</label>
+              <input maxlength="25" minlength="3" type="text" class="form-control" id="userSurname " aria-describedby="nameHelper"
                 aria-label="soyadı" />
               <span id="validateSurname" class="text-danger"></span>
             </div>
           </div>
           <div class="row">
             <div class="col-6 mt-1">
+              <label class="my-1" for="birthDate" class="form-label">Doğum Tarihiniz :</label>
+              <input type="date" class="form-control" id="birthDate " aria-describedby="birthDateHelper" min="1959-12-31" required/>
+            </div>
+            <div class="col-6 mt-1">
+              <label class="my-1" for="userPhone" class="form-label">Telefon Numarası :</label>
+              <input type="tel" class="form-control" id="userPhone" required size="11" minlength="11" maxlength="11"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 mt-1">
               <label class="my-1" for="userMail" class="form-label">E-Posta Adresiniz :</label>
               <input type="email" class="form-control" id="userMail " aria-describedby="emailHelper"
-                placeholder="e-posta adresinizi giriniz..." aria-label="e posta adresi giriş alanı" />
+                placeholder="e-posta adresinizi giriniz..." aria-label="e posta adresi giriş alanı" required/>
               <span id="validationEmail" class="text-danger"></span>
             </div>
             <div class="col-6 mt-1">
-              <label class="my-1" for="userPhoto" class="form-label">Profil Fotoğrafı :</label>
-              <input type="file" class="form-control" id="userPhoto" />
+              <label class="my-1" for="userPhoto" 
+              class="form-label">Profil Fotoğrafı :</label>
+              <input type="file" class="form-control" id="userPhoto" accept="image/jpeg" />
             </div>
           </div>
           <div class="row">
             <div class="col-6">
-              <label class="my-1" for="userPassword" class="form-label">Şifreniz</label>
+              <label class="my-1" for="userPassword" class="form-label" >Şifreniz</label>
               <div class="input-group mb-3">
-                <input type="password" class="form-control" id="userPassword" placeholder="******" />
+                <input type="password" class="form-control" id="userPassword" placeholder="******" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required />
                 <div class="input-group-text">
                   <input class="form-check-input mt-0" type="checkbox" onclick="passwordShow()" />
                 </div>
               </div>
-              <span id="validationPassword" class="text-danger"></span>
+              
+              <span id="letter" class="text-danger"></span>
             </div>
             <div class="col-6">
               <label class="my-1" for="userPasswordAgain" class="form-label">Şifre Tekrar</label>
               <div class="input-group mb-3">
-                <input type="password" class="form-control" id="userPasswordAgain" placeholder="******" />
+                <input type="password" class="form-control" id="userPasswordAgain" placeholder="******" required/>
                 <div class="input-group-text">
                   <input class="form-check-input mt-0" type="checkbox" onclick="passwordShow()" />
                 </div>
@@ -71,7 +83,7 @@
           </div>
           <div class="row">
             <div class="col-6">
-              <label class="my-1" for="cityId" class="form-label">Şehir Seçiniz</label>
+              <label class="mt-1" for="cityId" class="form-label">Şehir Seçiniz</label>
               <select class="form-select" id="cityId">
                 <option selected>Şehir Seçiniz...</option>
                 <option value="1">Ankara</option>
@@ -81,7 +93,7 @@
             </div>
 
             <div class="col-6">
-              <label class="my-1" for="cityId" class="form-label">İlçe Seçiniz</label>
+              <label class="mt-1" for="cityId" class="form-label">İlçe Seçiniz</label>
               <select class="form-select" id="cityId">
                 <option selected>İlçe Seçiniz...</option>
                 <option value="1">Ankara</option>
@@ -94,7 +106,7 @@
             <label for="adrdess" class="form-label">Açık adres bilgisi</label>
 
             <div>
-              <textarea class="form-control" placeholder="cadde sokak daire no:" id="address"
+              <textarea class="form-control" placeholder="cadde sokak daire no..." id="address"
                 style="height: 100px"></textarea>
             </div>
           </div>
@@ -109,7 +121,7 @@
             </div>
           </div>
           <div class="actions actions d-grid gap-1 my-3">
-            <input type="submit" id="register" class="btn btn-outline-success" disabled="disabled" />
+            <input value="Kayıt Ol" type="submit" id="register" class="btn btn-outline-success" disabled="disabled" form="userRegisterForm"/>
           </div>
         </form>
       </div>
@@ -120,7 +132,31 @@
     <my-footer></my-footer>
     <!-- Footer code-->
   </div>
+  <script>
+    (() => {
+      "use strict";
 
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll(".needs-validation");
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach((form) => {
+        form.addEventListener(
+          "submit",
+          (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
