@@ -89,26 +89,4 @@ $(function () {
           }
      });
   });
-
-  
-
-  //Password Control
-
-//   $("#register").click(function () {
-//     var password;
-//     var passwordAgain;
-
-//     var password = $("#userPassword").val();
-//     password = jQuery.trim(password);
-
-//     var passwordAgain = $("#userPasswordAgain").val();
-//     passwordAgain = jQuery.trim(passwordAgain);
-//     console.log(password);
-//     console.log(passwordAgain);
-
-//     // Password validator
-//     if (password != passwordAgain) {
-//       $("#validationPassword").html("Şifreler eşleşmiyor");
-//     }
-//   });
 });
