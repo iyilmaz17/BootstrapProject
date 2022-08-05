@@ -3,7 +3,6 @@ $.ajax({
   url: "http://localhost:3000/installments",
   data: "",
   success: function (data) {
-    console.log(data);
     paymentTable(data);
   }
 });
