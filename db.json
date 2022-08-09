@@ -3,42 +3,63 @@
     {
       "id": 1,
       "name": "İsmail",
-      "surname": "Yılmaz"
+      "surname": "Yılmaz",
+      "mail": "ismail@yilmaz",
+      "password": "123"
     },
     {
       "id": 2,
       "name": "Ahmet",
-      "surname": "Sönmez"
+      "surname": "Sönmez",
+      "mail": "ahmet@sonmez",
+      "password": "185523"
     },
     {
       "id": 3,
       "name": "Kerem",
-      "surname": "Yılmaz"
+      "surname": "Yılmaz",
+      "mail": "kerem@yilmaz",
+      "password": "15223"
     },
     {
       "id": 4,
       "name": "Kadir",
-      "surname": "Erdem"
+      "surname": "Erdem",
+      "mail": "kadir@erdem",
+      "password": "1252523"
     },
     {
       "id": 5,
       "name": "Mert",
-      "surname": "Korkmaz"
+      "surname": "Korkmaz",
+      "mail": "mert@korkmaz",
+      "password": "12727523"
     },
     {
+      "id": 6,
       "name": "Osman",
       "surname": "Yıldırım",
-      "id": 6
+      "mail": "osman@yildirim",
+      "password": "8527852"
     },
     {
+      "id": 7,
       "name": "Özlem",
       "surname": "Yıldırım",
-      "id": 7
+      "mail": "özlem@yıldırım",
+      "password": "5828282"
     },
     {
+      "id": 8,
       "name": "Eymen",
       "surname": "Kurt",
-      "id": 7
+      "mail": "eymen@kurt",
+      "password": "2785"
+    },
+    {
+      "name": "özlem",
+      "surname": "Yıldırım",
+      "id": 9
     }
   ],
   "installments": [

@@ -1,6 +1,6 @@
 $.ajax({
   dataType: "json",
-  url: "http://localhost:3000/installments",
+  url: `${API_URL}installments`,
   data: "",
   success: function (data) {
     paymentTable(data);

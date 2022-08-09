@@ -1,6 +1,6 @@
 $.ajax({
   dataType: "json",
-  url: "http://localhost:3000/citys",
+  url: `${API_URL}citys`,
   data: "",
   success: function (cityData) {
     getCitys(cityData);
