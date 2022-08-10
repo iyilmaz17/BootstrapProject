@@ -1,3 +1,26 @@
+// Product detail 
+
+$.ajax({
+  dataType: "json",
+  url: `${API_URL}products`,
+  data: "",
+  success: function (data) {
+    $("#title" ).html(data[2].productName);
+    $("#brand").html(data[2].brand);
+    $("#unitPrice").html(data[2].unitPrice);
+    
+    for (var i =0; i < data[i].images.length; i++){
+     var a = $("#image").attr("src",data[i].images[i]);
+      console.log(data[i].images[i])
+    }
+   //console.log(data[4].images[0])
+    //$("#image").attr("src","./image/excalibur.jpg");
+    //./image/asus.jpeg
+  }
+});
+
+// Payment Table Add
+
 $.ajax({
   dataType: "json",
   url: `${API_URL}installments`,

@@ -1,4 +1,19 @@
+// Ürün ekleme
 
+$.ajax({
+  dataType: "json",
+  url: `${API_URL}products`,
+  data: "",
+  success: function (data) {
+    console.log(data.length);
+    for (var i = 0; i < data.length; i++)
+    {
+  var $div = $( "<div class='col'><div class='card shadow-sm'><img id='image' src='"+data[i].images+"' style='width: auto; height: auto' alt='asus' /><div class='card-body'><p class='card-text' id='cardtitle'>"+data[i].productName +"</p><div class='d-flex justify-content-between align-items-center'><a href='./product.html' style='height: 50px; width: 100%'><button type='button'class='btn btn-sm btn-outline-primary justify-content-end'style='height: 50px; width: 100%'>Sepete Ekle</button></a></div></div></div></div>");
+  $("#addProduct").append($div);
+  
+}
+ }
+});
 
 // Password Show   // Tek şifre alanı için çalışıyor iki alan olarak düzeltilmeli
 
