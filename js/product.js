@@ -1,21 +1,18 @@
 // Product detail 
-
+var id = window.location.search;
+console.log(id);
 $.ajax({
   dataType: "json",
-  url: `${API_URL}products`,
+  url: `${API_URL}products?Id=${id}`,
   data: "",
   success: function (data) {
-    $("#title" ).html(data[2].productName);
-    $("#brand").html(data[2].brand);
-    $("#unitPrice").html(data[2].unitPrice);
+    $("#title" ).html(data[0].productName);
+    $("#brand").html(data[0].brand);
+    $("#unitPrice").html(data[0].unitPrice);
     
-    for (var i =0; i < data[i].images.length; i++){
-     var a = $("#image").attr("src",data[i].images[i]);
-      console.log(data[i].images[i])
+    for (var i =0; i < data[0].images.length; i++){
+    $("#image").attr("src",data[i].images[i]);
     }
-   //console.log(data[4].images[0])
-    //$("#image").attr("src","./image/excalibur.jpg");
-    //./image/asus.jpeg
   }
 });
 

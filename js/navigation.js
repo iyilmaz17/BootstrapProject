@@ -41,11 +41,11 @@ class MyHeader extends HTMLElement {
                 <div class="modal-body">\
                     <form class="">\
                         <div class="form-floating mb-3"><input type="email" class="form-control rounded-3"\
-                                id="floatingInput" placeholder="name@example.com"><label for="floatingInput">Mail\
+                                id="userMail" placeholder="name@example.com"><label for="userMail">Mail\
                                 Adresi</label></div>\
                         <div class="form-floating mb-3"><input type="password" class="form-control rounded-3"\
-                                id="floatingPassword" placeholder="Password"><label for="floatingPassword">Şifre</label>\
-                        </div><button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Giriş</button><a\
+                                id="userPassword" placeholder="Password"><label for="userPassword">Şifre</label>\
+                        </div><button id="login" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Giriş</button><a\
                             href="#">Şifremi Unuttum</a>\
                     </form>\
                 </div>\
