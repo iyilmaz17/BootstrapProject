@@ -1,9 +1,11 @@
-// Product detail 
-var id = window.location.search;
-console.log(id);
+// Product detail (Ürün detay sayfasını her ürüne özel olarak getiriyor.)
+// url link sorgusunu main.js de bulunan product add alanından alıyor
+$(function() {
+  var id = window.location.search;
 $.ajax({
+  
   dataType: "json",
-  url: `${API_URL}products?Id=${id}`,
+  url: `${API_URL}products${id}`,
   data: "",
   success: function (data) {
     $("#title" ).html(data[0].productName);
@@ -15,7 +17,7 @@ $.ajax({
     }
   }
 });
-
+});
 // Payment Table Add
 
 $.ajax({
