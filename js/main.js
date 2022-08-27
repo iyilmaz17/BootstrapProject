@@ -1,22 +1,21 @@
 //product add
 // db.json dosyasından ürünleri çekip index.html ve category.html ürünleri yazdırıyor.
-
+// Ürün resminde hat var id eklendi
 $.ajax({
   dataType: "json",
-  url: `${API_URL}products`,
+  url: `${API_URL}Product`,
   data: "",
   success: function (data) {
     for (var i = 0; i < data.length; i++) {
-      var $div = $("<div class='col'><div class='card shadow-sm'><img id='image' src='" + data[i].images + "' style='width: auto; height: auto' alt='asus' /><div class='card-body'><p class='card-text' id='cardtitle'>" + data[i].productName + "</p><div class='d-flex justify-content-between align-items-center'><a href='product.html?Id="+data[i].Id+"' style='height: 50px; width: 100%'><button type='button'class='btn btn-sm btn-outline-primary justify-content-end'style='height: 50px; width: 100%'>Sepete Ekle</button></a></div></div></div></div>");
+      var $div = $("<div class='col'><div class='card shadow-sm'><img id='image' src='" + data[i].image1 + "' style='width: auto; height: auto' alt='asus' /><div class='card-body'><p class='card-text' id='cardtitle'>" + data[i].productName + "</p><div class='d-flex justify-content-between align-items-center'><a href='product.html?id=" + data[i].id + "' style='height: 50px; width: 100%'><button type='button'class='btn btn-sm btn-outline-primary justify-content-end'style='height: 50px; width: 100%'>Sepete Ekle</button></a></div></div></div></div>");
       $("#addProduct").append($div);
-
     }
   }
 });
 /* url: `${API_URL}products?Id=${id}`,
  url : `${API_URL}product.html?id=5` */
 // Page Top Button
- 
+
 $(function () {
   $("#pageTop").hide();
   $(window).scroll(function () {
@@ -45,20 +44,20 @@ $(function () {
       $(".actions input").attr("disabled", false);
     }
 
-$("#userPasswordAgain").on('keyup', function () {
-      var userPassword = $("#userPassword").val();
-      var userPasswordAgain = $("#userPasswordAgain").val();
+    // $("#userPasswordAgain").on('keyup', function () {
+    //   var userPassword = $("#userPassword").val();
+    //   var userPasswordAgain = $("#userPasswordAgain").val();
 
 
-      if (userPassword != userPasswordAgain) {
-        $(".actions input").attr("disabled", "disabled");
-        $("#validationPasswordAgain").html("Şifreler Eşleşmiyor").css("color", "red");
-      }
-      else {
-        $("#validationPasswordAgain").html("");
-        $(".actions input").attr("disabled", false);
-      }
-    });
+    //   if (userPassword != userPasswordAgain) {
+    //     $(".actions input").attr("disabled", "disabled");
+    //     $("#validationPasswordAgain").html("Şifreler Eşleşmiyor").css("color", "red");
+    //   }
+    //   else {
+    //     $("#validationPasswordAgain").html("");
+    //     $(".actions input").attr("disabled", false);
+    //   }
+    // });
   });
 });
 
@@ -76,34 +75,35 @@ function passwordShow() {
 
 
 
- $(function () {
-   //var API_URL = "http://localhost:3000/"
+$(function () {
+  //var API_URL = "http://localhost:3000/"
   // var pass = "2785"
   // var mail = "eymen@kurt"
 
-   
 
-   $('#login').click(function () {
+
+  $('#login').click(function () {
 
     var mail = $("#userMail").val();
     var pass = $("#userPassword").val();
 
     var url = `${API_URL}users?mail=${mail}&password=${pass}`
-     $.ajax({       type: "GET",
-       url: url,
-       data: "",
-       success: function (data) {
-         console.log(data);
-         if (data.length > 0) {
-            alert(data[0].name +" Giriş Başarılı Hoşgeldiniz");
-            console(data[0].name)
-         }
-         else {
-           alert("Hatalı Mail adresi veya Parola");
+    $.ajax({
+      type: "GET",
+      url: url,
+      data: "",
+      success: function (data) {
+        console.log(data);
+        if (data.length > 0) {
+          alert(data[0].name + " Giriş Başarılı Hoşgeldiniz");
+          console(data[0].name)
+        }
+        else {
+          alert("Hatalı Mail adresi veya Parola");
 
-         }
+        }
 
-       }
-     });
-   });
- });
+      }
+    });
+  });
+});

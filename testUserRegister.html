@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./myProject.css" rel="stylesheet" />
+  <title>Test Üye kayıt</title>
+</head>
+
+<body>
+  <!-- Navbar Code -->
+  <my-header></my-header>
+  <!-- Navbar Code End-->
+  <div class="d-flex justify-content-center">
+    <h1>Test Üye Kayıt Formu</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <label class="mt-1" for="cityId" class="form-label">Şehir Seçiniz</label>
+      <select class="form-select" id="cityId">
+        <option value="0">Şehir Seçiniz...</option>
+      </select>
+    </div>
+
+    <div class="col-6">
+      <label class="mt-1" for="districtId" class="form-label">İlçe Seçiniz</label>
+      <select class="form-select" id="districtId" >
+        <option value="0">İlçe Seçiniz...</option>
+      </select>
+    </div>
+  </div>
+  <div class="container">
+    <!-- Footer code-->
+    <my-footer></my-footer>
+    <!-- Footer code-->
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+  <script src="./js/constant.js"></script>
+  <script>
+  $.ajax({
+  dataType: "json",
+  url: `${API_URL}city`,
+  data: "",
+  success: function (cityData) {
+    getCitys(cityData);
+  }
+});
+function getCitys(cityData) {
+$(document).ready(function () {
+    $.each(cityData, function (index, value) {
+      $('#cityId').append($('<option>', {
+        value: value.id,
+        text: value.cityName
+      }));
+    });});};
+    $("#cityId").change(function () {
+      var cityId = $("#cityId").val();
+      $.ajax({
+        dataType: "json",
+        //url: `${API_URL}District`,
+        url:`http://localhost:5166/api/District/${cityId}`,
+        data: "",
+        success: function (districtData) {
+          getdistrict(districtData);
+        }
+      })
+      
+    });
+    function getdistrict(districtData){
+      $(document).ready(function () {
+    $.each(districtData, function (index, value) {
+      $('#districtId').append($('<option>', {
+        value: value.id,
+        text: value.districtName
+      }));
+    });});}
+    
+   
+  </script>
+</body>
+
+</html>
+<!-- if($("#cityId").val()>0){
+  $('#districtId').html('');
+  $('#districtId').append($('<option>', {
+    value: 0,
+    text: 'İlçe Seçiniz...'
+  }));
+  //$('#districtId').prop("disabled", false);
+  $.each(resultObject.districts, function (index, value) {
+    $('#districtId').append($('<option>', {
+      value: value.id,
+      text: value.districtName
+    }));
+  });
+} -->
